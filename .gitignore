@@ -1,0 +1,14 @@
+bin
+obj
+
+*.vs
+*.aux
+*.pdf
+*.out
+*.log
+*.gz
+*.sln
+*.fls
+*.fdb*
+
+*.csproj
