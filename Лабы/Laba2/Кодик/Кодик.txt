@@ -1,0 +1,65 @@
+Упражнение 1:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BankAccount
+{
+    enum AccountType
+    {
+        Checking,
+        Deposit
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            AccountType goldAccount;
+            AccountType platinumAccount;
+            goldAccount = AccountType.Checking;
+            platinumAccount = AccountType.Deposit;
+            Console.WriteLine(goldAccount);
+            Console.WriteLine(platinumAccount);
+        }
+    }
+}
+
+Упражнение 2:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StructType
+{
+    internal class Program
+    {
+        public enum AccountType
+        {
+            Checking,
+            Deposit
+        }
+        public struct BankAccount
+        {
+            public long accNo;
+            public decimal accBal;
+            public AccountType accType;
+        }
+        static void Main(string[] args)
+        {
+            BankAccount goldAccount = new BankAccount();
+            goldAccount.accNo = 123;
+            goldAccount.accBal = 0;
+            goldAccount.accType = AccountType.Checking;
+            Console.WriteLine(goldAccount.accNo);
+            Console.WriteLine(goldAccount.accBal);
+            Console.WriteLine(goldAccount.accType);
+        }
+    }
+}

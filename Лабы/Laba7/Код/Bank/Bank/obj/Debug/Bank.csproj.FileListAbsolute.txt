@@ -1,0 +1,7 @@
+C:\Users\Nef0o0r\OneDrive\Study\2 cours\Sem 1\ООП C#\Лабы\Laba7\Код\Bank\Bank\bin\Debug\Bank.exe.config
+C:\Users\Nef0o0r\OneDrive\Study\2 cours\Sem 1\ООП C#\Лабы\Laba7\Код\Bank\Bank\bin\Debug\Bank.exe
+C:\Users\Nef0o0r\OneDrive\Study\2 cours\Sem 1\ООП C#\Лабы\Laba7\Код\Bank\Bank\bin\Debug\Bank.pdb
+C:\Users\Nef0o0r\OneDrive\Study\2 cours\Sem 1\ООП C#\Лабы\Laba7\Код\Bank\Bank\obj\Debug\Bank.csproj.AssemblyReference.cache
+C:\Users\Nef0o0r\OneDrive\Study\2 cours\Sem 1\ООП C#\Лабы\Laba7\Код\Bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+C:\Users\Nef0o0r\OneDrive\Study\2 cours\Sem 1\ООП C#\Лабы\Laba7\Код\Bank\Bank\obj\Debug\Bank.exe
+C:\Users\Nef0o0r\OneDrive\Study\2 cours\Sem 1\ООП C#\Лабы\Laba7\Код\Bank\Bank\obj\Debug\Bank.pdb

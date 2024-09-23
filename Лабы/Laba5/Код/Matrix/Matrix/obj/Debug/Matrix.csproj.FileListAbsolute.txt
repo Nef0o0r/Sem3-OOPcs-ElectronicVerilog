@@ -1,0 +1,7 @@
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\Matrix\Matrix\bin\Debug\Matrix.exe.config
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\Matrix\Matrix\bin\Debug\Matrix.exe
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\Matrix\Matrix\bin\Debug\Matrix.pdb
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\Matrix\Matrix\obj\Debug\Matrix.csproj.AssemblyReference.cache
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\Matrix\Matrix\obj\Debug\Matrix.csproj.CoreCompileInputs.cache
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\Matrix\Matrix\obj\Debug\Matrix.exe
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\Matrix\Matrix\obj\Debug\Matrix.pdb

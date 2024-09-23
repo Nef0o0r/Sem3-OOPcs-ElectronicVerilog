@@ -1,0 +1,7 @@
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\FileDetails\FileDetails\obj\Debug\FileDetails.csproj.AssemblyReference.cache
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\FileDetails\FileDetails\obj\Debug\FileDetails.csproj.CoreCompileInputs.cache
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\FileDetails\FileDetails\bin\Debug\FileDetails.exe.config
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\FileDetails\FileDetails\bin\Debug\FileDetails.exe
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\FileDetails\FileDetails\bin\Debug\FileDetails.pdb
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\FileDetails\FileDetails\obj\Debug\FileDetails.exe
+C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba5\Код\FileDetails\FileDetails\obj\Debug\FileDetails.pdb
