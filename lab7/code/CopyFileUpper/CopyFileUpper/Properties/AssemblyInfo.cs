@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("Bank")]
+[assembly: AssemblyTitle("CopyFileUpper")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Bank")]
+[assembly: AssemblyProduct("CopyFileUpper")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("3f5558cd-bd1b-4540-950d-4dfcf1b19742")]
+[assembly: Guid("9dcfbad0-b4b3-4c56-a7d0-630d41fcb237")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
