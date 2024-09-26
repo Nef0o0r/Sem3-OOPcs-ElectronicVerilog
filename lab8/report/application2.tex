@@ -1,0 +1,203 @@
+\chapter*{Приложение 2}
+
+Файл CreateAccount.cs:
+\begingroup
+\fontsize{12pt}{12pt}\selectfont
+\linespread{1.5}
+\begin{verbatim}
+class CreateAccount
+{
+    static void Main() 
+    {
+        BankAccount acc1;
+
+        acc1 = new BankAccount();
+        acc1.Deposit(200);
+        acc1.Withdraw(100);
+        Write(acc1);
+
+        acc1.Dispose();
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+    }
+      
+    static void Write(BankAccount acc)
+    {
+        Console.WriteLine("Account number is {0}",
+                acc.Number());
+        Console.WriteLine("Account balance is {0}", 
+                acc.Balance());
+        Console.WriteLine("Account type is {0}",
+                acc.Type());
+		Console.WriteLine("Transactions:");
+		foreach (BankTransaction tran in 
+                acc.Transactions()) 
+		{
+			Console.WriteLine("Date/Time: {0}\tAmount: " +
+                    "{1}", tran.When(), tran.Amount());
+		}
+        Console.WriteLine();
+    }
+}
+\end{verbatim}  
+\endgroup
+
+Файл BankAccount.cs:
+\begingroup
+\fontsize{12pt}{12pt}\selectfont
+\linespread{1.5}
+\begin{verbatim}
+using System.Collections;
+
+class BankAccount : IDisposable
+{
+	private long accNo;
+    private decimal accBal;
+    private AccountType accType;
+    private Queue tranQueue = new Queue();
+    
+    private static long nextNumber = 123;
+
+	// Constructors
+    public BankAccount()
+    {
+        accNo = NextNumber();
+        accType = AccountType.Checking;
+        accBal = 0;
+    }
+
+    public BankAccount(AccountType aType)
+	{
+        accNo = NextNumber();
+        accType = aType;
+        accBal = 0;
+	}
+
+	public BankAccount(decimal aBal)
+	{
+        accNo = NextNumber();
+        accType = AccountType.Checking;
+        accBal = aBal;
+	}
+
+	public BankAccount(AccountType aType, decimal aBal)
+	{
+        accNo = NextNumber();
+        accType = aType;
+        accBal = aBal;
+	}
+
+    public bool Withdraw(decimal amount)
+    {
+        bool sufficientFunds = accBal >= amount;
+        if (sufficientFunds) {
+            accBal -= amount;
+            BankTransaction tran = new BankTransaction(
+                    -amount);
+            tranQueue.Enqueue(tran);
+        }
+        return sufficientFunds;
+    }
+    
+    public decimal Deposit(decimal amount)
+    {
+        accBal += amount;
+        BankTransaction tran = new BankTransaction(
+                    amount);
+        tranQueue.Enqueue(tran);
+        return accBal;
+    }
+
+	public Queue Transactions()
+	{
+		return tranQueue;
+	}
+    
+    public long Number()
+    {
+        return accNo;
+    }
+    
+    public decimal Balance()
+    {
+        return accBal;
+    }
+    
+    public string Type()
+    {
+        return accType.ToString();
+    }
+
+    private static long NextNumber()
+    {
+        return nextNumber++;
+    }
+
+    public void Dispose()
+    {
+        tranQueue.Clear();
+    }
+}
+\end{verbatim}  
+\endgroup
+
+Файл BankTransaction.cs:
+\begingroup
+\fontsize{12pt}{12pt}\selectfont
+\linespread{1.5}
+\begin{verbatim}
+using System.IO;
+/// <summary>
+///   A BankTransaction is created every time a deposit 
+///   or withdrawal occurs on a BankAccount
+///   A BankTransaction records the amount of money
+///   involved, together with the current date and time.
+/// </summary>
+public class BankTransaction
+{
+    private readonly decimal amount;
+    private readonly DateTime when;
+
+    public BankTransaction(decimal tranAmount)
+    {
+        Console.WriteLine("Tran created");
+        amount = tranAmount;
+        when = DateTime.Now;
+    }
+
+    public decimal Amount()
+    {
+        return amount;
+    }
+
+    public DateTime When()
+    {
+        return when;
+    }			 
+
+    ~BankTransaction()
+    {
+        StreamWriter swFile = File.AppendText("Transactions.Dat");
+        swFile.WriteLine("Date/Time: {0}\tAmount: {1}", 
+                        when, amount);
+        swFile.Close();
+        GC.SuppressFinalize(this);
+    }
+}
+
+\end{verbatim}  
+\endgroup
+
+Файл AccountType.cs:
+\begingroup
+\fontsize{12pt}{12pt}\selectfont
+\linespread{1.5}
+\begin{verbatim}
+enum AccountType 
+{ 
+    Checking, 
+    Deposit 
+}
+\end{verbatim}  
+\endgroup
+\endinput

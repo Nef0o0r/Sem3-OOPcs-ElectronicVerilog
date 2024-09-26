@@ -1,0 +1,161 @@
+\documentclass[a4paper, 14pt, oneside, openany]{memoir}
+
+%%% Поля, отступы и межстрочный интервал %%%
+
+\linespread{1.5} % Междустрочный 1.5
+\usepackage[left=20mm, right=15mm, top=20mm, bottom=20mm]{geometry} % Поля
+\pagestyle{plain} % Убираем верхние колонтитулы
+\parindent=1.25cm % Абзацный отступ 1.25 см
+\usepackage{indentfirst} % Отступ для первого абзаца
+\usepackage{fancyhdr} % Футеры и хедэры
+\fancypagestyle{plain}{ % Переназначение стиля
+\fancyhf{} % Очистка всех полей
+\fancyfoot[C]{\fontsize{12pt}{12pt}\selectfont\thepage} % Номер страницы
+\renewcommand{\headrulewidth}{0pt} % Высота хедера
+\renewcommand{\footrulewidth}{0pt}} % Высота футера
+\pagestyle{plain} % Применение стиля
+
+%%% Язык и шрифт %%%
+\usepackage[english, russian]{babel} % Русский язык
+\usepackage{fontspec}
+\setmainfont{Times New Roman} % Шрифт текста
+
+%%% Заголовки и подзаголовки %%%
+
+\usepackage{titlesec}
+%\titleformat{\chapter}{\normalfont\bfseries\centering\MakeUppercase}{\thechapter}{8pt}{}
+\titleformat{\chapter}{\normalfont\bfseries\centering\MakeUppercase}{}{8pt}{} % Без нумерации и модержания
+\titleformat{\section}{\normalfont\bfseries}{\thesection}{8pt}{}
+\titleformat{\subsection}{\normalfont\bfseries}{\thesubsection}{8pt}{}
+\titleformat{\subsubsection}{\normalfont\bfseries}{\thesubsubsection}{8pt}{}
+\titlespacing*{\chapter}{0pt}{-26pt}{0pt}
+\titlespacing*{\section}{\parindent}{0pt}{0pt}
+\titlespacing*{\subsection}{\parindent}{0pt}{0pt}
+\titlespacing*{\subsubsection}{\parindent}{0pt}{0pt}
+\setsecnumdepth{subsection} % Разделы считать до третьего уровня
+
+%%% Оглавление %%%
+
+%\renewcommand*{\chapternumberline}[1]{} % Чтобы номер обычной главы не печатался но считался
+\renewcommand*{\chapterheadstart}{} % Нет отступа над заголовком
+\renewcommand*{\printchaptertitle}{\normalfont\bfseries\centering\MakeUppercase} % Стиль заголовка
+\addto\captionsrussian{\renewcommand\contentsname{Содержание\vspace{-20pt}}} % Меняем слово "Оглавление" на "Содержание"
+% \setrmarg{2.55em plus1fil} % Запрещаем переносы слов в оглавлении
+\setlength{\cftbeforechapterskip}{0pt} % Нет интервала между заголовками глав
+\renewcommand*{\cftchapternumwidth}{1.5em} % Разделитель между номером главы и заголовком
+\renewcommand*{\cftchapterfont}{\normalfont\MakeUppercase} % Шрифт глав
+\renewcommand*{\cftchapterpagefont}{\normalfont} % Шрифт страниц
+\renewcommand*{\cftchapterdotsep}{\cftdotsep} % Точки до номера страницы после названий глав
+\renewcommand*{\cftdotsep}{1} % Задаем расстояние между точками
+\renewcommand*{\cftchapterleader}{\cftdotfill{\cftchapterdotsep}} % Точки стандартной формы
+\maxtocdepth{subsection} %Только разделы первыхтрех уровней
+
+%%% Выравнивание и переносы %%%
+
+% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
+% http://www.latex-community.org/forum/viewtopic.php?p=70342#p70342
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\vfuzz \hfuzz
+%\dbottom
+% \sloppy % Избавляемся от переполнений
+\clubpenalty=10000 % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000 % Запрещаем разрыв страницы после последней строки абзаца
+\brokenpenalty=4991 % Ограничение на разрыв страницы, если строка заканчивается переносом
+
+%%% Буквы русского алфавита для перечислений %%%
+
+\makeatletter
+\def\russian@alph#1{\ifcase#1\or
+	а\or б\or в\or г\or д\or е\or ж\or
+	и\or к\or л\or м\or н\or
+	п\or р\or с\or т\or у\or ф\or х\or
+	ц\or ш\or щ\or э\or ю\or я\else\xpg@ill@value{#1}{russian@alph}\fi}
+\makeatother
+
+%%% Рисунки и таблицы %%%
+\usepackage{cellspace} % Для работы титульника
+\usepackage{float, listings, graphicx, caption, subcaption} % Работа с графикой и подписями
+\setlength{\intextsep}{14pt} % Между текстом и рисунком
+\graphicspath{{images/}} % Папка с рисунками
+\captionsetup[figure]{font=small, width=\textwidth, name=Рисунок, justification=centering} % Подписи к рисункам
+\captionsetup[subfigure]{font=small} % Индексы подрисунков
+\captionsetup[table]{singlelinecheck=false, font=small, width=\textwidth, justification=justified} % Подписи к таблицам
+\captiondelim{ --- } % Разделитель номера и подписи
+\setkeys{Gin}{width=\textwidth} % По умолчанию размер под ширину текста
+\renewcommand{\thesubfigure}{\asbuk{subfigure}} % Нумерация подрисунков
+\usepackage[section]{placeins} % float не вылезают за границы секциии
+
+%%% Ссылки и гиперссылки %%% 
+
+\usepackage{hyperref}
+\hypersetup{hidelinks, % Выключить цвета и рамки для ссылок
+			linktoc=all} % В оглавлении ссылки всех уровней
+
+%%% Списки %%%
+
+\usepackage{enumitem}
+\makeatletter
+\AddEnumerateCounter{\asbuk}{\russian@alph} % Подключение Кириллицы
+\makeatother
+
+\newlist{particle}{enumerate}{2} % Пункты и подпункты как в ГОСТ
+\setlist[particle]{align = left, nosep, leftmargin = 0pt, labelsep = 8pt, listparindent = \parindent, itemindent = \labelwidth + \labelsep + \parindent + \leftmargin}
+\setlist[particle, 1]{label=\bfseries\thesection.\arabic*}
+\setlist[particle, 2]{label*=\bfseries.\arabic*}
+
+\setlist[enumerate]{label=\ \ \ \ \ \arabic*), align = left, nosep, leftmargin = 0pt, labelsep = 3.6pt, listparindent = \parindent, itemindent = \labelwidth + \labelsep + \parindent + \leftmargin - 17.9pt} % Нумерация цифрами
+
+\newlist{letter}{enumerate}{1}
+\setlist[letter]{label = \ \ \ \ \ \asbuk*), align=left, nosep, leftmargin=0pt, labelsep = 3.6pt, listparindent = \parindent, itemindent = \labelwidth + \labelsep + \parindent + \leftmargin - 17.9pt}  % Нумерация буквами
+
+\setlist[itemize]{label = \ \ \ \ \ \normalfont{--}, align = left, nosep, leftmargin = 0pt, labelsep = 3.6pt, listparindent = \parindent, itemindent = \labelwidth + \labelsep + \parindent + \leftmargin - 17.9pt} % Перечисление
+
+%%% Счетчики для нумерации объектов %%%
+
+\counterwithout{figure}{chapter} % Сквозная нумерация рисунков
+\counterwithout{equation}{chapter} % Сквозная нумерация формул
+\counterwithout{table}{chapter} % Сквозная нумерация таблиц
+
+%%% Библиография %%%
+
+%\input{bibogr}
+
+%%% Доп функционал %%%
+
+%\usepackage{amsmath} % Мат пакет
+
+%%% Собственные функции %%%
+
+\usepackage{xargs} % Много аргументов
+\NewDocumentCommand\pic{O{ht}O{120mm}mm} % Вставка изображения
+{
+	\begin{figure}[#1]
+		\centering
+		\includegraphics[width=#2]{#3}
+		\caption{#4}
+		\label{pic:#3}
+	\end{figure}
+	\vspace{-15pt}
+}
+\newcommand{\picref}[1]  % Вставка ссылки на изображение
+{
+	(\hyperref[pic:#1]{рисунок \ref*{pic:#1}})
+}
+
+%%% Неформальный код %%%
+
+\setmonofont{PT Mono}
+% \usepackage{polyglossia}
+% \setsansfont{Arial}
+% \setmonofont{Courier New}
+% \newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}
+% \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Arial}
+% \newfontfamily\cyrillicfonttt[Script=Cyrillic]{Courier New}
+% \usepackage{minted}
+% \usemintedstyle[python]{pastie}
+% \usemintedstyle[c]{pastie}
+% \usemintedstyle[cpp]{pastie}
+% \usemintedstyle[java]{pastie}
