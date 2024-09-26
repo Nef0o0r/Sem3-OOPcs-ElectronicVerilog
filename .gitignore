@@ -11,4 +11,6 @@ obj
 *.fls
 *.fdb*
 
+!*Минко*
+
 *.csproj
