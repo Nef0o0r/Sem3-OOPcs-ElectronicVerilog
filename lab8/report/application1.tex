@@ -1,10 +1,7 @@
 \chapter*{Приложение 1}
 
 Файл CreateAccount.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
-\begin{verbatim}
+\begin{lstlisting}[style=CSharpStyle]
 class CreateAccount
 {
     // Test Harness
@@ -51,14 +48,10 @@ class CreateAccount
 		Console.WriteLine();
     }
 }
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 
 Файл BankAccount.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
-\begin{verbatim}
+\begin{lstlisting}[style=CSharpStyle]
 using System.Collections;
 
 class BankAccount 
@@ -144,14 +137,10 @@ class BankAccount
         return nextNumber++;
     }
 }
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 
 Файл BankTransaction.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
-\begin{verbatim}
+\begin{lstlisting}[style=CSharpStyle]
 /// <summary>
 ///   A BankTransaction is created every time a deposit or withdrawal occurs on a BankAccount
 ///   A BankTransaction records the amount of money involved, together with the current date and time.
@@ -177,20 +166,15 @@ public class BankTransaction
         return when;
     }			 
 }
-
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 
 Файл AccountType.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
+\begin{lstlisting}[style=CSharpStyle]
 \begin{verbatim}
 enum AccountType 
 { 
     Checking, 
     Deposit 
 }
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 \endinput

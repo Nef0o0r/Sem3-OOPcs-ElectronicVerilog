@@ -1,10 +1,7 @@
 \chapter*{Приложение 2}
 
 Файл CreateAccount.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
-\begin{verbatim}
+\begin{lstlisting}[style=CSharpStyle]
 class CreateAccount
 {
     static void Main() 
@@ -39,14 +36,10 @@ class CreateAccount
         Console.WriteLine();
     }
 }
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 
 Файл BankAccount.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
-\begin{verbatim}
+\begin{lstlisting}[style=CSharpStyle]
 using System.Collections;
 
 class BankAccount : IDisposable
@@ -138,14 +131,10 @@ class BankAccount : IDisposable
         tranQueue.Clear();
     }
 }
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 
 Файл BankTransaction.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
-\begin{verbatim}
+\begin{lstlisting}[style=CSharpStyle]
 using System.IO;
 /// <summary>
 ///   A BankTransaction is created every time a deposit 
@@ -185,19 +174,14 @@ public class BankTransaction
     }
 }
 
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 
 Файл AccountType.cs:
-\begingroup
-\fontsize{12pt}{12pt}\selectfont
-\linespread{1.5}
-\begin{verbatim}
+\begin{lstlisting}[style=CSharpStyle]
 enum AccountType 
 { 
     Checking, 
     Deposit 
 }
-\end{verbatim}  
-\endgroup
+\end{lstlisting}  
 \endinput
