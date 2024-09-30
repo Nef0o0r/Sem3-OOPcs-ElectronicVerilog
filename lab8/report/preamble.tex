@@ -147,7 +147,40 @@
 
 %%% Неформальный код %%%
 
+
+\usepackage{listings}
+\usepackage{xcolor}  % Для поддержки цветных стилей
+
+\lstdefinestyle{CSharpStyle}{
+  language=[Sharp]C,
+  basicstyle=\ttfamily\footnotesize,         % Основной шрифт и его размер
+  keywordstyle=\color{blue}\bfseries,        % Ключевые слова: жирный синий
+  stringstyle=\color{red},                   % Строковые литералы: красный
+  commentstyle=\color{gray}\itshape,         % Комментарии: серый курсив
+  morecomment=[l][\color{magenta}]{\#},      % Комментарии, начинающиеся с #
+  identifierstyle=\color{black},              % Идентификаторы (переменные, классы): бирюзовый
+  numberstyle=\tiny\color{gray},             % Стиль номеров строк
+  emph={int,float,double,string,public,private}, % Эмфатический стиль для типов данных и модификаторов
+  emphstyle=\color{violet}\bfseries,         % Подсветка типов данных и модификаторов: фиолетовый жирный
+  sensitive=true,                            % Регистрозависимость
+  % frame=single,                              % Рамка вокруг кода
+  % rulecolor=\color{black},                   % Цвет рамки
+  numbers=left,                              % Нумерация строк слева
+  stepnumber=1,                              % Нумеровать каждую строку
+  numbersep=10pt,                            % Отступ для номеров строк
+  tabsize=4,                                 % Размер табуляции
+  showspaces=false,                          % Не показывать пробелы
+  showstringspaces=false,                    % Не показывать пробелы в строках
+  breaklines=true,                           % Перенос строк
+  breakatwhitespace=true,                    % Перенос только по пробелам
+  % backgroundcolor=\color{lightgray!20},      % Легкий серый фон для кода
+  captionpos=b,                              % Подпись под кодом
+  escapeinside={(*@}{@*)},                   % Позволяет вставлять LaTeX код в код
+}
+
+\lstset{style=CSharpStyle}
 \setmonofont{PT Mono}
+
 % \usepackage{polyglossia}
 % \setsansfont{Arial}
 % \setmonofont{Courier New}
