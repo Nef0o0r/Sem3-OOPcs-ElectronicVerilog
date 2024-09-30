@@ -1,6 +1,0 @@
-enum AccountType 
-{ 
-    Checking, 
-    Deposit 
-}
-
