@@ -1,0 +1,63 @@
+//
+//Written by GowinSynthesis
+//Tool Version "V1.9.9.03 Education (64-bit)"
+//Thu Oct  3 11:42:08 2024
+
+//Source file index table:
+//file0 "\C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/Skhematechnika/Laba\ 2/Laba_2/src/pwm_led.v"
+`pragma protect begin_protected
+`pragma protect version="2.3"
+`pragma protect author="default"
+`pragma protect author_info="default"
+`pragma protect encrypt_agent="GOWIN"
+`pragma protect encrypt_agent_info="GOWIN Encrypt Version 2.3"
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=256)
+`pragma protect key_keyowner="GOWIN",key_keyname="GWK2023-09",key_method="rsa"
+`pragma protect key_block
+RjyqtJlmUo+xBPUg940CWIKAG4Prez3C8aMweu7wAmxfzNzdxVqoB8brZiwx6hnH+P9VC94Q/ySY
+tnW2NSNr1QJOD6n+YaCs+Twze2b0sAftWgaMoy0M40VS+zpkDA+DJdMZ087GLSUXz1XCpm1AhoDb
+Q2aJU/5RwDDcAW0pr0Rc5KQl+PGrM5S0KlNDlnxrUDyxMYxThcYOmU22FXhoxY7IkNj1COPGR4vD
+iL04RMoURaNTf4rsjX4XhCf80EEeQTjSAdg0jJecyEHn81uXzPPajmNZLygM+3c7bwI22sndVznF
+aJKlP8AM9uHQ3luXpvS6b8b+BhA8VxaUvdgFzQ==
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=1904)
+`pragma protect data_keyowner="default-ip-vendor"
+`pragma protect data_keyname="default-ip-key"
+`pragma protect data_method="aes128-cfb"
+`pragma protect data_block
+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
+2PxZPwdjl/TYde1JgIknOhdlBsjYuGo=
+`pragma protect end_protected

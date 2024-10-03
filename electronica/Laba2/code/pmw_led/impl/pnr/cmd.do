@@ -1,0 +1,12 @@
+-d C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\Skhematechnika\Laba 2\Laba_2\impl\gwsynthesis\Laba_2.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cfg C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\Skhematechnika\Laba 2\Laba_2\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000

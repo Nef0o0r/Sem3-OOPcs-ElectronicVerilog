@@ -1,0 +1,138 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\SKHEMO~1\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\SKHEMO~1\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\SKHEMO~1\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\SKHEMO~1\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\SKHEMO~1\iverilog\lib\ivl\va_math.vpi";
+S_0000022f0faac800 .scope module, "pwm_led_tb" "pwm_led_tb" 2 3;
+ .timescale -9 -9;
+v0000022f0fb44930_0 .var "clk", 0 0;
+v0000022f0fb43e90_0 .net "led", 5 0, L_0000022f0fb9e2c0;  1 drivers
+S_0000022f0faac990 .scope module, "uut" "pwm_led" 2 9, 3 1 0, S_0000022f0faac800;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /OUTPUT 6 "led";
+P_0000022f0fae8c80 .param/l "LED_COUNT" 1 3 7, +C4<00000000000000000000000000000110>;
+v0000022f0fb441b0_0 .net "clk", 0 0, v0000022f0fb44930_0;  1 drivers
+v0000022f0fb444d0_0 .var "counter", 2 0;
+v0000022f0fb446b0_0 .net "led", 5 0, L_0000022f0fb9e2c0;  alias, 1 drivers
+E_0000022f0fae8840 .event posedge, v0000022f0fb441b0_0;
+LS_0000022f0fb9e2c0_0_0 .concat8 [ 1 1 1 1], L_0000022f0fb9e180, L_0000022f0fb9dbe0, L_0000022f0fb9e9a0, L_0000022f0fb9d5a0;
+LS_0000022f0fb9e2c0_0_4 .concat8 [ 1 1 0 0], L_0000022f0fb9e220, L_0000022f0fb9e7c0;
+L_0000022f0fb9e2c0 .concat8 [ 4 2 0 0], LS_0000022f0fb9e2c0_0_0, LS_0000022f0fb9e2c0_0_4;
+S_0000022f0fac2b50 .scope generate, "led_block[0]" "led_block[0]" 3 20, 3 20 0, S_0000022f0faac990;
+ .timescale 0 0;
+P_0000022f0fae8e00 .param/l "i" 0 3 20, +C4<00>;
+v0000022f0faf5130_0 .net *"_ivl_0", 31 0, L_0000022f0fb43cb0;  1 drivers
+L_0000022f0fb45538 .functor BUFT 1, C4<00000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000022f0faef950_0 .net *"_ivl_3", 28 0, L_0000022f0fb45538;  1 drivers
+L_0000022f0fb45580 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000022f0faacb20_0 .net/2u *"_ivl_4", 31 0, L_0000022f0fb45580;  1 drivers
+v0000022f0faacbc0_0 .net *"_ivl_6", 0 0, L_0000022f0fb9e180;  1 drivers
+L_0000022f0fb43cb0 .concat [ 3 29 0 0], v0000022f0fb444d0_0, L_0000022f0fb45538;
+L_0000022f0fb9e180 .cmp/gt 32, L_0000022f0fb43cb0, L_0000022f0fb45580;
+S_0000022f0faf4ca0 .scope generate, "led_block[1]" "led_block[1]" 3 20, 3 20 0, S_0000022f0faac990;
+ .timescale 0 0;
+P_0000022f0fae8f40 .param/l "i" 0 3 20, +C4<01>;
+v0000022f0faf4e30_0 .net *"_ivl_0", 31 0, L_0000022f0fb9d780;  1 drivers
+L_0000022f0fb455c8 .functor BUFT 1, C4<00000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb44070_0 .net *"_ivl_3", 28 0, L_0000022f0fb455c8;  1 drivers
+L_0000022f0fb45610 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb44610_0 .net/2u *"_ivl_4", 31 0, L_0000022f0fb45610;  1 drivers
+v0000022f0fb449d0_0 .net *"_ivl_6", 0 0, L_0000022f0fb9dbe0;  1 drivers
+L_0000022f0fb9d780 .concat [ 3 29 0 0], v0000022f0fb444d0_0, L_0000022f0fb455c8;
+L_0000022f0fb9dbe0 .cmp/gt 32, L_0000022f0fb9d780, L_0000022f0fb45610;
+S_0000022f0fac2ce0 .scope generate, "led_block[2]" "led_block[2]" 3 20, 3 20 0, S_0000022f0faac990;
+ .timescale 0 0;
+P_0000022f0fae8b80 .param/l "i" 0 3 20, +C4<010>;
+v0000022f0fb44b10_0 .net *"_ivl_0", 31 0, L_0000022f0fb9f440;  1 drivers
+L_0000022f0fb45658 .functor BUFT 1, C4<00000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb44750_0 .net *"_ivl_3", 28 0, L_0000022f0fb45658;  1 drivers
+L_0000022f0fb456a0 .functor BUFT 1, C4<00000000000000000000000000000010>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb44110_0 .net/2u *"_ivl_4", 31 0, L_0000022f0fb456a0;  1 drivers
+v0000022f0fb43df0_0 .net *"_ivl_6", 0 0, L_0000022f0fb9e9a0;  1 drivers
+L_0000022f0fb9f440 .concat [ 3 29 0 0], v0000022f0fb444d0_0, L_0000022f0fb45658;
+L_0000022f0fb9e9a0 .cmp/gt 32, L_0000022f0fb9f440, L_0000022f0fb456a0;
+S_0000022f0fb44c70 .scope generate, "led_block[3]" "led_block[3]" 3 20, 3 20 0, S_0000022f0faac990;
+ .timescale 0 0;
+P_0000022f0fae8bc0 .param/l "i" 0 3 20, +C4<011>;
+v0000022f0fb44890_0 .net *"_ivl_0", 31 0, L_0000022f0fb9d640;  1 drivers
+L_0000022f0fb456e8 .functor BUFT 1, C4<00000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb43fd0_0 .net *"_ivl_3", 28 0, L_0000022f0fb456e8;  1 drivers
+L_0000022f0fb45730 .functor BUFT 1, C4<00000000000000000000000000000011>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb44390_0 .net/2u *"_ivl_4", 31 0, L_0000022f0fb45730;  1 drivers
+v0000022f0fb44250_0 .net *"_ivl_6", 0 0, L_0000022f0fb9d5a0;  1 drivers
+L_0000022f0fb9d640 .concat [ 3 29 0 0], v0000022f0fb444d0_0, L_0000022f0fb456e8;
+L_0000022f0fb9d5a0 .cmp/gt 32, L_0000022f0fb9d640, L_0000022f0fb45730;
+S_0000022f0fb44e00 .scope generate, "led_block[4]" "led_block[4]" 3 20, 3 20 0, S_0000022f0faac990;
+ .timescale 0 0;
+P_0000022f0fae8c00 .param/l "i" 0 3 20, +C4<0100>;
+v0000022f0fb442f0_0 .net *"_ivl_0", 31 0, L_0000022f0fb9ea40;  1 drivers
+L_0000022f0fb45778 .functor BUFT 1, C4<00000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb43d50_0 .net *"_ivl_3", 28 0, L_0000022f0fb45778;  1 drivers
+L_0000022f0fb457c0 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb447f0_0 .net/2u *"_ivl_4", 31 0, L_0000022f0fb457c0;  1 drivers
+v0000022f0fb44bb0_0 .net *"_ivl_6", 0 0, L_0000022f0fb9e220;  1 drivers
+L_0000022f0fb9ea40 .concat [ 3 29 0 0], v0000022f0fb444d0_0, L_0000022f0fb45778;
+L_0000022f0fb9e220 .cmp/gt 32, L_0000022f0fb9ea40, L_0000022f0fb457c0;
+S_0000022f0fb44f90 .scope generate, "led_block[5]" "led_block[5]" 3 20, 3 20 0, S_0000022f0faac990;
+ .timescale 0 0;
+P_0000022f0fae9180 .param/l "i" 0 3 20, +C4<0101>;
+v0000022f0fb44a70_0 .net *"_ivl_0", 31 0, L_0000022f0fb9d6e0;  1 drivers
+L_0000022f0fb45808 .functor BUFT 1, C4<00000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb44570_0 .net *"_ivl_3", 28 0, L_0000022f0fb45808;  1 drivers
+L_0000022f0fb45850 .functor BUFT 1, C4<00000000000000000000000000000101>, C4<0>, C4<0>, C4<0>;
+v0000022f0fb43f30_0 .net/2u *"_ivl_4", 31 0, L_0000022f0fb45850;  1 drivers
+v0000022f0fb44430_0 .net *"_ivl_6", 0 0, L_0000022f0fb9e7c0;  1 drivers
+L_0000022f0fb9d6e0 .concat [ 3 29 0 0], v0000022f0fb444d0_0, L_0000022f0fb45808;
+L_0000022f0fb9e7c0 .cmp/gt 32, L_0000022f0fb9d6e0, L_0000022f0fb45850;
+    .scope S_0000022f0faac990;
+T_0 ;
+    %wait E_0000022f0fae8840;
+    %load/vec4 v0000022f0fb444d0_0;
+    %pad/u 32;
+    %cmpi/u 5, 0, 32;
+    %jmp/0xz  T_0.0, 5;
+    %load/vec4 v0000022f0fb444d0_0;
+    %addi 1, 0, 3;
+    %assign/vec4 v0000022f0fb444d0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v0000022f0fb444d0_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0000022f0faac800;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022f0fb44930_0, 0, 1;
+T_1.0 ;
+    %delay 5, 0;
+    %load/vec4 v0000022f0fb44930_0;
+    %inv;
+    %store/vec4 v0000022f0fb44930_0, 0, 1;
+    %jmp T_1.0;
+    %end;
+    .thread T_1;
+    .scope S_0000022f0faac800;
+T_2 ;
+    %delay 1000, 0;
+    %vpi_call 2 19 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_0000022f0faac800;
+T_3 ;
+    %vpi_call 2 24 "$dumpfile", "pwm_led_out.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000022f0faac800 {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "./src/pwm_led_tb.v";
+    "./src/pwm_led.v";

@@ -1,7 +1,0 @@
-C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba4\Код\Utils\Utils\bin\Debug\Utils.exe.config
-C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba4\Код\Utils\Utils\bin\Debug\Utils.exe
-C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba4\Код\Utils\Utils\bin\Debug\Utils.pdb
-C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba4\Код\Utils\Utils\obj\Debug\Utils.csproj.AssemblyReference.cache
-C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba4\Код\Utils\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
-C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba4\Код\Utils\Utils\obj\Debug\Utils.exe
-C:\Users\Nef0o0r\OneDrive\Study\Второй курс\ООП C#\Лабы\Laba4\Код\Utils\Utils\obj\Debug\Utils.pdb

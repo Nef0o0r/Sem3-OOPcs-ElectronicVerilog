@@ -1,0 +1,13 @@
+-d C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\Skhematechnika\Laba1\runner\impl\gwsynthesis\runner.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\Skhematechnika\Laba1\runner\src\runner.cst
+-cfg C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\Skhematechnika\Laba1\runner\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000
