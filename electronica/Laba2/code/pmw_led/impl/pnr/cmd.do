@@ -1,7 +1,8 @@
--d C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\Skhematechnika\Laba 2\Laba_2\impl\gwsynthesis\Laba_2.vg
+-d C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba2\code\pmw_led\impl\gwsynthesis\Laba_2.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cfg C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\Skhematechnika\Laba 2\Laba_2\impl\pnr\device.cfg
+-cst C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba2\code\pmw_led\src\pwm_led.cst
+-cfg C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba2\code\pmw_led\impl\pnr\device.cfg
 -bit
 -tr
 -ph
