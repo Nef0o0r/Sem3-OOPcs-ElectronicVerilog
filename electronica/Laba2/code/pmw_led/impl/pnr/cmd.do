@@ -1,7 +1,7 @@
 -d C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba2\code\pmw_led\impl\gwsynthesis\Laba_2.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba2\code\pmw_led\src\pwm_led.cst
+-cst C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba2\code\pmw_led\src\Laba_2.cst
 -cfg C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba2\code\pmw_led\impl\pnr\device.cfg
 -bit
 -tr

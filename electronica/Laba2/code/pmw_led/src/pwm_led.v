@@ -1,10 +1,15 @@
 module pwm_led
+#(parameter  LED_COUNT = 6, parameter COOLDOWN = 21) // для симуляции COOLDOWN = 3, для запуска 21
 (
     input clk,
+    input  up,
+    input down,
     output [LED_COUNT-1:0] led  
 );
 
-localparam LED_COUNT = 6;
+
+reg [2:0] shift;
+reg [COOLDOWN-1:0] cooldown;
 reg [2:0] counter;
 
 always @(posedge clk)
@@ -13,6 +18,31 @@ begin
         counter <= counter + 1'b1;
     else
         counter <= 0;
+end
+
+always @(posedge clk)
+begin
+    if (!cooldown)
+    begin
+        if (!up)
+        begin
+            cooldown <= 2**COOLDOWN-1;
+            if (shift < LED_COUNT-1)
+                shift <= shift + 1'b1;
+            else
+                shift <= 0;
+    end
+    else if (!down)
+    begin
+        cooldown <= 2**COOLDOWN-1;
+        if (shift > 0)
+            shift <= shift - 1'b1;
+        else
+            shift <= LED_COUNT-1;
+        end
+    end
+    else
+        cooldown <= cooldown - 1'b1;
 end
 
 genvar i;
