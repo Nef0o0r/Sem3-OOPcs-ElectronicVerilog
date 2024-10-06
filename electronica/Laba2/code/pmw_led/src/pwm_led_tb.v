@@ -8,7 +8,7 @@ reg down;
 wire [5:0] led;  // Светодиоды
 
 // Экземпляр тестируемого модуля
-pwm_led #(6, 21) uut(.clk(clk), .up(up), .down(down), .led(led));
+pwm_led uut(.clk(clk), .up(up), .down(down), .led(led));
 
 // Генерация тактового сигнала с периодом 10 нс (частота 100 МГц)
 initial begin
