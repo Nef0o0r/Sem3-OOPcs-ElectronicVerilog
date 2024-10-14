@@ -1,0 +1,26 @@
+`timescale 1ns / 1ns
+
+module indicator_tb();
+
+reg clk;
+wire [3:0] digits;
+wire [7:0] segments;
+
+indicator uut(.clk(clk), .digits(digits), .segments(segments));
+
+// Генерация тактового сигнала с периодом 10 нс (частота 100 МГц)
+initial begin
+    clk = 0;
+    forever #(5) clk = ~clk;
+end
+
+// Завершение симуляции через 1000 нс
+initial #1000 $finish;
+
+// Сохранение результата симуляции в файл VCD
+initial begin
+    $dumpfile("indicator_tb_out.vcd");
+    $dumpvars(0, indicator_tb);
+end
+
+endmodule
