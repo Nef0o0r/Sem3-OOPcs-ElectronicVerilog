@@ -9,7 +9,9 @@ obj
 *.sln
 *.fls
 *.fdb*
+*.hdl_checker
 
+*compiled*
 !*Минко*
 
 *.csproj
