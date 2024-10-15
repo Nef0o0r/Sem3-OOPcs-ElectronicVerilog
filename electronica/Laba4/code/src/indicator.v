@@ -35,22 +35,22 @@ end
 always @(posedge clk) begin
     if (!delay) begin
         delay <= DELAY;
-        digit_index <= digit_index + 1;
+        digit_index <= digit_index + 1'b1;
     end
-    else delay <= delay - 1;
+    else delay <= delay - 1'b1;
 end
 
 always @(*) begin
     case (digit_index)
-        0: active_segment = DIGITS[1];
-        1: active_segment = DIGITS[2];
-        2: active_segment = DIGITS[3];
-        3: active_segment = DIGITS[4];
+        0: active_segment = DIGITS[3];
+        1: active_segment = DIGITS[3];
+        2: active_segment = DIGITS[6];
+        3: active_segment = DIGITS[3];
         default: active_segment = DIGITS[10];
     endcase
 end
 
-assign digits = 1 << digit_index;
+assign digits = 1'b0001 << digit_index;
 assign segments = active_segment;
 
 endmodule
