@@ -1,0 +1,8 @@
+\renewcommand\UrlFont{\rmfamily} % Шрифт для ссылок на сайты
+\usepackage{csquotes} % Сложное цитирование
+\usepackage[backend=biber, bibencoding=utf8, sorting=none, style=gost-numeric, language=auto, autolang=other, sortcites=true, movenames=false, maxnames=5, minnames=3, doi=false, isbn=false]{biblatex}[2016/09/17] % Оформление
+\renewcommand*{\bibfont}{\normalfont\upshape\itshape\normalsize\rmfamily} % Шрифт
+\DeclareDelimFormat{bibinitdelim}{} % Нет пробела между инициалами
+\addbibresource{lib.bib} % Файл с библиографией
+%%% Скрипт для русского языка
+\DeclareSourcemap{\maps[datatype=bibtex]{\map{\step[fieldsource=title, match=\regexp{^\P{Cyrillic}*\p{Cyrillic}.*}, final] \step[fieldset=langid, fieldvalue={russian}]}\map{\step[fieldset=langid, fieldvalue={english}]}}}

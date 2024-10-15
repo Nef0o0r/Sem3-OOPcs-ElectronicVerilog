@@ -1,3 +1,10 @@
+\chapter{Приложение 1 --- Исходный код модуля}
+
+Файл indicator.v:
+\begingroup
+    \fontsize{12pt}{12pt}\selectfont
+    \linespread{1.5}
+    \begin{verbatim}
 module indicator 
 (
     input clk,
@@ -54,3 +61,6 @@ assign digits = 4'b0001 << digit_index;
 assign segments = active_segment;
 
 endmodule
+    \end{verbatim}  
+\endgroup
+\endinput
