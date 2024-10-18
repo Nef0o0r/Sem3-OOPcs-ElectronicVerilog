@@ -1,0 +1,83 @@
+module spi_testbench;
+
+    // Входы для мастер-устройства
+    reg clk;
+    reg rst;
+    reg start;
+    reg [7:0] data_in;
+
+    // Выходы от мастер-устройства
+    wire SCLK;
+    wire SS;
+    wire MOSI;
+    wire done;
+
+    // Выходы от слейв-устройства
+    wire [7:0] data_out;
+    wire MISO;
+
+    // Модуль master
+    spi_master_mode0 master (
+        .clk(clk),
+        .rst(rst),
+        .start(start),
+        .data_in(data_in),
+        .SCLK(SCLK),
+        .SS(SS),
+        .MOSI(MOSI),
+        .done(done)
+    );
+
+    // Модуль slave
+    spi_slave_mode0 slave (
+        .clk(clk),
+        .rst(rst),
+        .SCLK(SCLK),
+        .SS(SS),
+        .MOSI(MOSI),
+        .data_out(data_out),
+        .MISO(MISO)
+    );
+
+    // Генерация тактового сигнала
+    always begin
+        #5 clk = ~clk; // 10 единиц времени на такт (5 на каждую половину)
+    end
+
+    // Тестирование
+    initial begin
+        // Инициализация
+        clk = 0;
+        rst = 1;
+        start = 0;
+        data_in = 8'b10101010;
+
+        // Сброс системы
+        #10;
+        rst = 0;
+
+        // Старт передачи данных
+        #20;
+        start = 1;
+
+        // Ожидание завершения передачи
+        wait(done);
+
+        // Проверка результата
+        if (data_out == data_in) begin
+            $display("Тест пройден: переданные и принятые данные совпадают.");
+        end else begin
+            $display("Ошибка: данные не совпадают.");
+        end
+
+        // Завершение симуляции
+        $finish;
+    end
+
+    // Генерация VCD-файла для анализа временных диаграмм
+    initial begin
+        $dumpfile("spi_wave.vcd");  // файл для записи сигналов
+        $dumpvars(0, spi_testbench); // записать все переменные
+    end
+
+endmodule
