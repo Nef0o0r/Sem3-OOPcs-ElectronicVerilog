@@ -5,34 +5,34 @@
 1. PnR Messages
 
   <Report Title>: PnR Report
-  <Design File>: C:\Users\alec\Documents\GitHub\Sem3-OOPcs-ElectronicVerilog\electronica\Laba4\code\impl\gwsynthesis\indicator.vg
-  <Physical Constraints File>: C:\Users\alec\Documents\GitHub\Sem3-OOPcs-ElectronicVerilog\electronica\Laba4\code\src\indicator.cst
+  <Design File>: C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba4\code\impl\gwsynthesis\indicator.vg
+  <Physical Constraints File>: C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba4\code\src\indicator.cst
   <Timing Constraints File>: ---
   <Tool Version>: V1.9.9.03 Education (64-bit)
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Tue Oct 15 21:59:37 2024
+  <Created Time>:Fri Oct 18 13:16:18 2024
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.004s, Elapsed time = 0h 0m 0.004s
-    Placement Phase 1: CPU time = 0h 0m 0.102s, Elapsed time = 0h 0m 0.102s
+    Placement Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
+    Placement Phase 1: CPU time = 0h 0m 0.109s, Elapsed time = 0h 0m 0.11s
     Placement Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Placement Phase 3: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+    Placement Phase 3: CPU time = 0h 0m 0.906s, Elapsed time = 0h 0m 0.906s
     Total Placement: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
  Running routing:
     Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Routing Phase 1: CPU time = 0h 0m 0.171s, Elapsed time = 0h 0m 0.171s
-    Routing Phase 2: CPU time = 0h 0m 0.061s, Elapsed time = 0h 0m 0.061s
+    Routing Phase 1: CPU time = 0h 0m 0.117s, Elapsed time = 0h 0m 0.117s
+    Routing Phase 2: CPU time = 0h 0m 0.038s, Elapsed time = 0h 0m 0.038s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 0.232s, Elapsed time = 0h 0m 0.232s
+    Total Routing: CPU time = 0h 0m 0.155s, Elapsed time = 0h 0m 0.155s
  Generate output files:
-    CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+    CPU time = 0h 0m 0.493s, Elapsed time = 0h 0m 0.493s
 
- Total Time and Memory Usage: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s, Peak memory usage = 255MB
+ Total Time and Memory Usage: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 272MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 12/8640  <1%
-    --LUT,ALU,ROM16           | 12(12 LUT, 0 ALU, 0 ROM16)
+  Logic                       | 1/8640  <1%
+    --LUT,ALU,ROM16           | 1(1 LUT, 0 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 0
-  Register                    | 6/6693  <1%
+  Register                    | 1/6693  <1%
     --Logic Register as Latch | 0/6480  0%
-    --Logic Register as FF    | 6/6480  <1%
+    --Logic Register as FF    | 1/6480  <1%
     --I/O Register as Latch   | 0/213  0%
     --I/O Register as FF      | 0/213  0%
-  CLS                         | 7/4320  <1%
+  CLS                         | 1/4320  <1%
   I/O Port                    | 13
   I/O Buf                     | 13
     --Input Buf               | 1
@@ -100,7 +100,7 @@
   -------------------------------------------
   Signal         | Global Clock   | Location
   -------------------------------------------
-  clk_d          | PRIMARY        |  TL
+  clk_d          | PRIMARY        |  TR
   ===========================================
 
 
