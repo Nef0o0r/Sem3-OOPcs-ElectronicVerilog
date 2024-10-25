@@ -9,22 +9,22 @@ reg [7:0] DIGITS [0:10];
 
 initial begin
     
-    DIGITS[0] = ~'b11000000; // 0: ABCDEF
-    DIGITS[1] = ~'b11111001; // 1: BC
-    DIGITS[2] = ~'b10100100; // 2: ABDEG
+    DIGITS[0] = 'b11000000; // 0: ABCDEF
+    DIGITS[1] = 'b11111001; // 1: BC
+    DIGITS[2] = 'b10100100; // 2: ABDEG
     DIGITS[3] = ~'b10110000; // 3: ABCDG
-    DIGITS[4] = ~'b10011001; // 4: BCFG
-    DIGITS[5] = ~'b10010010; // 5: ACDFG
+    DIGITS[4] = 'b10011001; // 4: BCFG
+    DIGITS[5] = 'b10010010; // 5: ACDFG
     DIGITS[6] = ~'b10000010; // 6: ACDEFG
-    DIGITS[7] = ~'b11111000; // 7: ABC
-    DIGITS[8] = ~'b10000000; // 8: ABCDEFG
-    DIGITS[9] = ~'b10010000;  // 9: ABCDFG
+    DIGITS[7] = 'b11111000; // 7: ABC
+    DIGITS[8] = 'b10000000; // 8: ABCDEFG
+    DIGITS[9] = 'b10010000;  // 9: ABCDFG
     DIGITS[10] = ~8'b0;  // ALL
 end
 
-localparam DELAY = 255;
+localparam DELAY = 150000;
 
-reg [7:0] delay;
+reg [24:0] delay;
 reg [1:0] digit_index;
 reg [7:0] active_segment;
 
