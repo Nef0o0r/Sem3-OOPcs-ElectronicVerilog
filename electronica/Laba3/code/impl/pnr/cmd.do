@@ -1,0 +1,14 @@
+-d C:\Gowin\Gowin_V1.9.9.03_Education_x64\IDE\bin\Documents\Lab_3\impl\gwsynthesis\Lab_3.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst C:\Gowin\Gowin_V1.9.9.03_Education_x64\IDE\bin\Documents\Lab_3\src\Lab_3.cst
+-cfg C:\Gowin\Gowin_V1.9.9.03_Education_x64\IDE\bin\Documents\Lab_3\impl\pnr\device.cfg
+-sdc C:\Gowin\Gowin_V1.9.9.03_Education_x64\IDE\bin\Documents\Lab_3\src\Lab_3.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000
