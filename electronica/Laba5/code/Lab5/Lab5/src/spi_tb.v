@@ -1,10 +1,11 @@
+/*
 module spi_tb;
     reg clk = 0;
     reg reset = 0;
     reg button_data = 0;
     reg button_send = 0;
     wire SCLK, MOSI, SS;
-    wire [7:0] led_master, led_slave;
+    wire [5:0] led_master, led_slave;
 
     // Подключаем ведущий и ведомый модули
     spi_master master (
@@ -31,9 +32,13 @@ module spi_tb;
 
     // Имитируем работу кнопок
     initial begin
+        $dumpfile("output.vcd"); // Генерация VCD файла
+        $dumpvars(0, spi_tb);     // Запись всех переменных
+        
         reset = 1;
         #10 reset = 0;
         #10 button_data = 1; #10 button_data = 0; // Увеличить значение счётчика
         #20 button_send = 1; #10 button_send = 0; // Начать передачу
     end
 endmodule
+*/
