@@ -28,9 +28,9 @@ initial begin
     DIGITS[10] = 8'b0;  // ALL
 end
 
-localparam DELAY = 12;
+localparam DELAY = 150000;
 
-reg [3:0] delay;
+reg [24:0] delay;
 reg [1:0] digit_index;
 reg [7:0] active_segment;
 
