@@ -1,30 +1,36 @@
-/*
-module spi_slave (
-    input wire clk,
-    input wire SCLK,               // Входящий сигнал синхронизации
-    input wire MOSI,               // Входящие данные от ведущего
-    input wire SS,                 // Входящий сигнал выбора ведомого
-    output reg [5:0] received_data, // Принятые данные (6 бит)
-    output reg [5:0] led           // Светодиоды для отображения принятых данных (6 ламп)
+module spi_slave
+#(
+    parameter LED_COUNT = 6         // Количество светодиодов
+)
+(
+    input clk,                      // Тактовый сигнал
+    input SCLK,                     // Сигнал синхронизации от ведущего
+    input MISO,                     // Данные от ведущего
+    input SS,                       // Выбор ведомого
+    output reg [LED_COUNT-1:0] led  // Светодиоды
 );
-    reg [5:0] shift_reg = 0;
-    reg [2:0] bit_cnt = 0;
 
-    // При низком уровне SS начинается приём данных
-    always @(posedge SCLK or posedge SS) begin
-        if (SS) begin
-            // Сброс при высоком уровне SS
-            bit_cnt <= 0;
-            shift_reg <= 0;
-        end else begin
-            shift_reg <= {shift_reg[4:0], MOSI}; // Сдвиг в регистре
-            bit_cnt <= bit_cnt + 1;
-            if (bit_cnt == 5) begin
-                received_data <= shift_reg;  // Сохранение принятых данных
-                led <= shift_reg;            // Обновление светодиодов (6 ламп)
-                bit_cnt <= 0;                // Сброс счётчика
-            end
+reg [LED_COUNT-1:0] data_received; // Данные, принятые от ведущего
+reg [2:0] bit_cnt = 0;              // Счётчик бит
+
+initial begin
+    data_received = 0;              // Инициализация принятых данных
+    led = 6'b111111;                // Инициализация светодиодов
+end
+
+always @(posedge clk) begin
+    if (!SS) begin                   // Если ведомый выбран
+        if (SCLK) begin              // Если SCLK активен
+            data_received <= {data_received[LED_COUNT-2:0], MISO}; // Сдвиг данных
+            bit_cnt <= bit_cnt + 1;  // Увеличение счетчика бит
+        end
+    end else begin                   // Если ведомый не выбран
+        if (bit_cnt == LED_COUNT) begin // Если все данные приняты
+            led <= data_received;    // Отобразить принятые данные на светодиодах
+            data_received <= 0;      // Сброс данных для следующей передачи
+            bit_cnt <= 0;            // Сброс счетчика бит
         end
     end
+end
+
 endmodule
-*/
