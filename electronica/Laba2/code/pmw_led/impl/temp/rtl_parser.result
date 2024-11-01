@@ -1,9 +1,9 @@
 [
  {
-  "InstFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba2/code/pmw_led/src/pwm_led.v",
+  "InstFile" : "C:/github/Sem3-OOP-Csharp/electronica/Laba2/code/pmw_led/src/pwm_led.v",
   "InstLine" : 1,
   "InstName" : "pwm_led",
-  "ModuleFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba2/code/pmw_led/src/pwm_led.v",
+  "ModuleFile" : "C:/github/Sem3-OOP-Csharp/electronica/Laba2/code/pmw_led/src/pwm_led.v",
   "ModuleLine" : 1,
   "ModuleName" : "pwm_led"
  }

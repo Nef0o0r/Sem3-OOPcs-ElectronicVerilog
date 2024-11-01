@@ -1,10 +1,10 @@
 [
  {
-  "InstFile" : "C:/Gowin/Gowin_V1.9.9.03_Education_x64/IDE/bin/Documents/Lab_3/src/Lab_3.v",
-  "InstLine" : 4,
+  "InstFile" : "C:/github/Sem3-OOP-Csharp/electronica/Laba3/code/src/Lab_3.v",
+  "InstLine" : 3,
   "InstName" : "led_controller",
-  "ModuleFile" : "C:/Gowin/Gowin_V1.9.9.03_Education_x64/IDE/bin/Documents/Lab_3/src/Lab_3.v",
-  "ModuleLine" : 4,
+  "ModuleFile" : "C:/github/Sem3-OOP-Csharp/electronica/Laba3/code/src/Lab_3.v",
+  "ModuleLine" : 3,
   "ModuleName" : "led_controller"
  }
 ]
