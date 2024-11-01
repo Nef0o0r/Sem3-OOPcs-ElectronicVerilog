@@ -12,27 +12,27 @@
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Thu Oct 31 20:17:35 2024
+  <Created Time>:Fri Nov  1 13:14:00 2024
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.005s, Elapsed time = 0h 0m 0.005s
-    Placement Phase 1: CPU time = 0h 0m 0.076s, Elapsed time = 0h 0m 0.076s
-    Placement Phase 2: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
-    Placement Phase 3: CPU time = 0h 0m 0.537s, Elapsed time = 0h 0m 0.537s
-    Total Placement: CPU time = 0h 0m 0.619s, Elapsed time = 0h 0m 0.619s
+    Placement Phase 0: CPU time = 0h 0m 0.007s, Elapsed time = 0h 0m 0.007s
+    Placement Phase 1: CPU time = 0h 0m 0.131s, Elapsed time = 0h 0m 0.131s
+    Placement Phase 2: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.002s
+    Placement Phase 3: CPU time = 0h 0m 0.881s, Elapsed time = 0h 0m 0.881s
+    Total Placement: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
  Running routing:
     Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Routing Phase 1: CPU time = 0h 0m 0.104s, Elapsed time = 0h 0m 0.104s
-    Routing Phase 2: CPU time = 0h 0m 0.066s, Elapsed time = 0h 0m 0.066s
+    Routing Phase 1: CPU time = 0h 0m 0.112s, Elapsed time = 0h 0m 0.113s
+    Routing Phase 2: CPU time = 0h 0m 0.066s, Elapsed time = 0h 0m 0.065s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 0.17s, Elapsed time = 0h 0m 0.17s
+    Total Routing: CPU time = 0h 0m 0.178s, Elapsed time = 0h 0m 0.178s
  Generate output files:
-    CPU time = 0h 0m 0.435s, Elapsed time = 0h 0m 0.435s
+    CPU time = 0h 0m 0.546s, Elapsed time = 0h 0m 0.546s
 
- Total Time and Memory Usage: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 206MB
+ Total Time and Memory Usage: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 249MB
 
 
 3. Resource Usage Summary
@@ -40,19 +40,19 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 74/8640  <1%
-    --LUT,ALU,ROM16           | 74(74 LUT, 0 ALU, 0 ROM16)
+  Logic                       | 75/8640  <1%
+    --LUT,ALU,ROM16           | 75(75 LUT, 0 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 0
   Register                    | 42/6693  <1%
     --Logic Register as Latch | 0/6480  0%
     --Logic Register as FF    | 40/6480  <1%
     --I/O Register as Latch   | 0/213  0%
     --I/O Register as FF      | 2/213  <1%
-  CLS                         | 44/4320  2%
-  I/O Port                    | 19
-  I/O Buf                     | 19
+  CLS                         | 47/4320  2%
+  I/O Port                    | 18
+  I/O Buf                     | 18
     --Input Buf               | 3
-    --Output Buf              | 16
+    --Output Buf              | 15
     --Inout Buf               | 0
   IOLOGIC                     | 0%
   BSRAM                       | 0%
@@ -75,9 +75,9 @@
   -----------------------
   I/O Bank  | Usage       
   -----------------------
-  bank 1   | 2/25(8%)    
-  bank 2   | 5/23(21%)   
-  bank 3   | 12/23(52%)  
+  bank 1   | 1/25(4%)    
+  bank 2   | 3/23(13%)   
+  bank 3   | 14/23(60%)  
   =======================
 
 
@@ -118,15 +118,14 @@ led[2]       |           | 13/3          | Y          | out   | IOL21[B] | LVCMO
 led[3]       |           | 14/3          | Y          | out   | IOL22[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
 led[4]       |           | 15/3          | Y          | out   | IOL25[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
 led[5]       |           | 16/3          | Y          | out   | IOL26[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
-data_out[0]  |           | 80/3          | N          | out   | IOT12[A] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
-data_out[1]  |           | 42/2          | N          | out   | IOB41[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8       
+data_out[0]  |           | 84/3          | N          | out   | IOT10[A] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
+data_out[1]  |           | 81/3          | N          | out   | IOT11[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
 data_out[2]  |           | 86/3          | N          | out   | IOT8[A]  | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
-data_out[3]  |           | 76/1          | N          | out   | IOT37[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
-data_out[4]  |           | 85/3          | N          | out   | IOT8[B]  | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
+data_out[3]  |           | 85/3          | N          | out   | IOT8[B]  | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
+data_out[4]  |           | 83/3          | N          | out   | IOT10[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
 data_out[5]  |           | 82/3          | N          | out   | IOT11[A] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8       
 SCLK         |           | 36/2          | Y          | out   | IOB29[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8       
 MOSI         |           | 37/2          | Y          | out   | IOB31[A] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8       
-MISO         |           | 39/2          | Y          | out   | IOB33[A] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8       
 SS           |           | 38/2          | Y          | out   | IOB31[B] | LVCMOS18   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8       
 ====================================================================================================================================================================================================================
 
@@ -142,15 +141,15 @@ Loc./Bank| Signal       | Dir.  | Site     | IO Type  | Drive | Pull Mode | PCI 
 88/3     | -            | in    | IOT5[A]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 87/3     | -            | in    | IOT6[B]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 86/3     | data_out[2]  | out   | IOT8[A]  | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
-85/3     | data_out[4]  | out   | IOT8[B]  | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
-84/3     | -            | in    | IOT10[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
-83/3     | -            | in    | IOT10[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
+85/3     | data_out[3]  | out   | IOT8[B]  | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
+84/3     | data_out[0]  | out   | IOT10[A] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
+83/3     | data_out[4]  | out   | IOT10[B] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
 82/3     | data_out[5]  | out   | IOT11[A] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
-81/3     | -            | in    | IOT11[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
-80/3     | data_out[0]  | out   | IOT12[A] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
+81/3     | data_out[1]  | out   | IOT11[B] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
+80/3     | -            | in    | IOT12[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 79/3     | -            | in    | IOT12[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 77/1     | -            | in    | IOT37[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
-76/1     | data_out[3]  | out   | IOT37[B] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 1.8  
+76/1     | -            | in    | IOT37[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 75/1     | -            | in    | IOT38[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 74/1     | -            | in    | IOT38[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 73/1     | -            | in    | IOT39[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
@@ -178,10 +177,10 @@ Loc./Bank| Signal       | Dir.  | Site     | IO Type  | Drive | Pull Mode | PCI 
 36/2     | SCLK         | out   | IOB29[B] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8  
 37/2     | MOSI         | out   | IOB31[A] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8  
 38/2     | SS           | out   | IOB31[B] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8  
-39/2     | MISO         | out   | IOB33[A] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8  
+39/2     | -            | in    | IOB33[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 40/2     | -            | in    | IOB33[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 41/2     | -            | in    | IOB41[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
-42/2     | data_out[1]  | out   | IOB41[B] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 1.8  
+42/2     | -            | in    | IOB41[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 47/2     | -            | in    | IOB43[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 4/3      | button_send  | in    | IOL5[A]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8  

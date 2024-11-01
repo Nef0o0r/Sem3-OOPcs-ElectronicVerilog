@@ -11,7 +11,6 @@ module spi_master
     output reg [LED_COUNT-1:0] data_out, // Данные для отправки на ведомое устройство
     output reg SCLK,             // Сигнал синхронизации
     output reg MOSI,             // Данные от ведущего
-    output reg MISO,
     output reg SS               // Выбор ведомого
 
 );
@@ -37,18 +36,22 @@ always @(posedge clk) begin
         end
         else if (!button_send) begin // Сброс при нажатии кнопки down
                 cooldown <= (2 ** COOLDOWN) - 1;
-                data_out <= ~counter;
+                if (sending == 0) begin
+                    data_out <= ~counter;
                 counter <= 0;
                 SS <= 0;
                 bit_cnt <= 0;
                 sending <= 1;
+                end
+                
             end else if (sending) begin
-                        if (bit_cnt < 6) begin
-                            SCLK <= ~SCLK;
+                        if (bit_cnt < 7) begin
+                            SCLK <= 1;
                             if (SCLK) begin
-                                MOSI <= data_out[5];
-                                data_out <= {data_out[4:0], 1'b0};
+                                MOSI <= data_out[bit_cnt];
+                                //data_out <= {data_out[4:0], 1'b0};
                                 bit_cnt <= bit_cnt + 1;
+                                
                             end
                         end else begin
                             SS <= 1;
