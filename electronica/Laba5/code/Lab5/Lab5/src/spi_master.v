@@ -25,6 +25,7 @@ initial begin
     cooldown <= 0;                  // Начальное значение для cooldown
     data_out <= 6'b111111;
     SS <= 1;
+    SCLK <= 0;
 end
 
 always @(posedge clk) begin
@@ -36,26 +37,20 @@ always @(posedge clk) begin
         end
         else if (!button_send) begin // Сброс при нажатии кнопки down
                 cooldown <= (2 ** COOLDOWN) - 1;
-                if (sending == 0) begin
-                    data_out <= ~counter;
+                data_out <= ~counter;
                 counter <= 0;
                 SS <= 0;
                 bit_cnt <= 0;
                 sending <= 1;
-                end
-                
             end else if (sending) begin
-                        if (bit_cnt < 7) begin
-                            SCLK <= 1;
-                            if (SCLK) begin
-                                MOSI <= data_out[bit_cnt];
-                                //data_out <= {data_out[4:0], 1'b0};
-                                bit_cnt <= bit_cnt + 1;
-                                
-                            end
+                        if (bit_cnt < 8) begin
+                            SCLK <= ~SCLK;
+                            MOSI <= data_out[bit_cnt];
+                            bit_cnt <= bit_cnt + 1;  
                         end else begin
                             SS <= 1;
-                            sending <=0;
+                            sending <= 0;
+                            SCLK <= 0;
                                  end
                      end
     end else begin
