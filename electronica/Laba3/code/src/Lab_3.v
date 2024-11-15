@@ -1,46 +1,42 @@
-//iverilog -o ./compiled ./src/Lab_3.v ./src/indicator_tb.v
-//vvp ./compiled
 module led_controller 
 #(parameter COOLDOWN = 21)
 (
     input wire clk,
-    input wire [2:0] switches,     // Три переключателя
-    input up,      // кнопка для инверсии состояния
-    output [2:0] leds         // Шесть светодиодов
+    input wire [2:0] switches,   // Три переключателя
+    input up,                    // Кнопка для инверсии состояния
+    output [2:0] leds        // Три светодиода
 );
 
-    reg invert = 0;                // Флаг для инверсии состояния светодиодов
-    integer i;
-    reg [5:0] to_leds;
-    //ssssreg [1:0] cnt;
+    reg invert = 0;              // Флаг для инверсии состояния светодиодов
+    reg [COOLDOWN-1:0] cooldown; // Таймер для обработки дребезга
+    reg [2:0] to_leds;
 
-initial 
+initial
 begin
-    to_leds = 6'b111111;
+    to_leds = 3'b111;
     cooldown <= 0;
 end
-   
-
-reg [COOLDOWN-1:0] cooldown;
-
-    // Логика инверсии состояния при нажатии кнопки
+   // Логика инверсии состояния при нажатии кнопки
     always @(posedge clk) begin
-        if (up == 0) invert <= ~invert;     // Переключаем флаг инверсии при нажатии любой кнопки
+        if (!up && cooldown == 0) begin
+            cooldown <= 2**COOLDOWN-1;   // Устанавливаем таймер после нажатия кнопки
+            invert <= ~invert;              // Переключаем флаг инверсии
+        end
+        else begin
+            cooldown <= cooldown - 1'b1;       // Уменьшаем таймер, пока он не станет равным нулю
+        end
     end
 
-// Обновление состояния светодиодов в зависимости от переключателей и флага инверсии
-always@(*) 
-begin
-    if (!cooldown)
-    begin
-        if (!up)
-        begin
-            cooldown <= 2**COOLDOWN-1;
-            to_leds <= ~switches[2:0];
+
+    // Управление светодиодами в зависимости от флага инверсии и состояния переключателей
+    always @(posedge clk) begin
+        if (invert) begin
+            to_leds <= ~switches;        // Инвертируем состояние переключателей для светодиодов
         end
-        else to_leds <= switches[2:0];
+        else begin
+            to_leds <= switches;         // Отображаем состояние переключателей напрямую
+        end
     end
     assign leds = to_leds;
-end
-
+    
 endmodule
