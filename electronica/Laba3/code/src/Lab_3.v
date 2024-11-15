@@ -1,5 +1,4 @@
 module led_controller 
-#(parameter COOLDOWN = 21)
 (
     input wire clk,
     input wire [2:0] switches,   // Три переключателя
@@ -8,25 +7,29 @@ module led_controller
 );
 
     reg invert = 0;              // Флаг для инверсии состояния светодиодов
-    reg [COOLDOWN-1:0] cooldown; // Таймер для обработки дребезга
+    reg [31:0] cooldown; // Таймер для обработки дребезга
+    reg temp_button;
     reg [2:0] to_leds;
 
 initial
 begin
     to_leds = 3'b111;
     cooldown <= 0;
+    temp_button <= 1;
 end
    // Логика инверсии состояния при нажатии кнопки
     always @(posedge clk) begin
-        if (!up && cooldown == 0) begin
-            cooldown <= 2**COOLDOWN-1;   // Устанавливаем таймер после нажатия кнопки
-            invert <= ~invert;              // Переключаем флаг инверсии
-        end
-        else begin
-            cooldown <= cooldown - 1'b1;       // Уменьшаем таймер, пока он не станет равным нулю
+        cooldown <= cooldown + 1;
+        temp_button <= up; //значение кнопки
+        if(cooldown > 4194304)
+        begin
+            if(up && temp_button != up)
+                begin
+                invert <= ~invert;                                  // Переключаем флаг инверсии
+                cooldown <= 0;                            // Уменьшаем таймер, пока он не станет равным нулю
+            end
         end
     end
-
 
     // Управление светодиодами в зависимости от флага инверсии и состояния переключателей
     always @(posedge clk) begin
