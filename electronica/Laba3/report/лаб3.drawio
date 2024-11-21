@@ -1,0 +1,79 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1219" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="naNSO9etE7zOwrYJu-4u-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="naNSO9etE7zOwrYJu-4u-0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="naNSO9etE7zOwrYJu-4u-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="50" y="110" />
+              <mxPoint x="50" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="Инициализация (обнуление)&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;светодиодов,&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;счётчика,&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;кнопки&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="140" y="70" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="naNSO9etE7zOwrYJu-4u-0" target="naNSO9etE7zOwrYJu-4u-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-0" value="Увеличение счётчика;&lt;div&gt;Получение значения кнопки&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="135" y="180" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="naNSO9etE7zOwrYJu-4u-2" target="naNSO9etE7zOwrYJu-4u-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-2" value="Счётчик перешёл ограничение?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="145" y="290" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-8" value="Да" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="280" y="307.5" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="naNSO9etE7zOwrYJu-4u-11" target="naNSO9etE7zOwrYJu-4u-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-11" value="кнопка не нажата&lt;div&gt;и предыдущее кнопки&lt;/div&gt;&lt;div&gt;отличается&amp;nbsp;&lt;/div&gt;&lt;div&gt;от состояния кнопки?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="370" y="270" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="naNSO9etE7zOwrYJu-4u-14" target="naNSO9etE7zOwrYJu-4u-0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-14" value="Переключение флага инверсии, обнуление счётчика" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="620" y="307.5" width="160" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-17" value="Да" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="550" y="307.5" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="naNSO9etE7zOwrYJu-4u-18" target="naNSO9etE7zOwrYJu-4u-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="naNSO9etE7zOwrYJu-4u-18" target="naNSO9etE7zOwrYJu-4u-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-18" value="Установился флаг&lt;div&gt;инверсии?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="440" width="130" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-20" value="Да" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="240" y="450" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-22" value="Инвертируем состояние переключателей для светодиодов" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="305" y="460" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-24" value="Нет" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="210" y="530" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="naNSO9etE7zOwrYJu-4u-25" value="Отображение состояния переключателей&lt;div&gt;&amp;nbsp;напрямую&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="118.75" y="585" width="172.5" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
