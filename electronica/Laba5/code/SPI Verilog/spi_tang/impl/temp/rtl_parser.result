@@ -1,0 +1,20 @@
+[
+ {
+  "InstFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba5/code/SPI Verilog/spi_tang/src/master_control.v",
+  "InstLine" : 1,
+  "InstName" : "master_control",
+  "ModuleFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba5/code/SPI Verilog/spi_tang/src/master_control.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "master_control",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba5/code/SPI Verilog/spi_tang/src/master_control.v",
+    "InstLine" : 22,
+    "InstName" : "m",
+    "ModuleFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba5/code/SPI Verilog/spi_tang/src/spi.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "spi_master"
+   }
+  ]
+ }
+]
