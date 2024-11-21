@@ -1,35 +1,59 @@
 module spi_slave
-#(
-    parameter LED_COUNT = 6         // Количество светодиодов
-)
 (
-    input clk,                      // Тактовый сигнал
-    input SCLK,                     // Сигнал синхронизации от ведущего
-    input MOSI,
-    input SS,                       // Выбор ведомого
-    output [LED_COUNT-1:0] led  // Светодиоды
+	input [7:0] data_out,
+	output reg [7:0] data_in,
+
+	input SCLK,
+	input MOSI,
+	output MISO,
+	input SS
 );
 
-reg [LED_COUNT-1:0] data_received; // Данные, принятые от ведущего
-reg [2:0] bit_cnt = 0;              // Счётчик бит
+reg state;
+reg [2:0] data_counter;
 
-initial begin
-    data_received = 6'b111111;              // Инициализация принятых данных
+initial
+begin
+	data_in <= 0;
+	state <= 0;
+	data_counter <= 0;
 end
 
-always @(posedge SCLK) begin
-    if (!SS) begin                   // Если ведомый выбран
-        if (SCLK) begin              // Если SCLK активен
-            data_received[bit_cnt] <= MOSI; // Сдвиг данных
-            bit_cnt <= bit_cnt + 1;  // Увеличение счетчика бит
-        end
-    end else begin                   // Если ведомый не выбран
-        if (bit_cnt == 8) begin // Если все данные приняты
-            //led <= data_received;    // Отобразить принятые данные на светодиодах
-            //data_received <= 0;      // Сброс данных для следующей передачи
-            bit_cnt <= 0;            // Сброс счетчика бит
-        end
-    end
+always @(posedge SCLK)
+begin
+	if (!SS)
+	begin
+		if (!state)
+		begin
+			state = 1;
+			data_counter = 7;
+		end
+
+		data_in = { data_in[6:0], MOSI };
+		if (data_counter == 0) state = 0;
+		data_counter = data_counter - 1;
+	end
 end
-assign led = data_received;
+
+assign MISO = state;
+
+endmodule
+
+module slave_control
+(
+	output [5:0] led,
+
+	input SCLK,
+	input MOSI,
+	output MISO,
+	input SS
+);
+
+reg [7:0] data_out;
+wire [7:0] data_in;
+
+spi_slave s (data_out, data_in, SCLK, MOSI, MISO, SS);
+
+assign led = ~data_in[5:0];
+
 endmodule

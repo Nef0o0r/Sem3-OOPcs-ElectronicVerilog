@@ -1,8 +1,8 @@
--d C:\github\Sem3-OOP-Csharp\electronica\Laba5\code\Lab5\Lab5\impl\gwsynthesis\Lab5.vg
+-d C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba5\code\Lab5\Lab5\impl\gwsynthesis\Lab5.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst C:\github\Sem3-OOP-Csharp\electronica\Laba5\code\Lab5\Lab5\src\spi_slave.cst
--cfg C:\github\Sem3-OOP-Csharp\electronica\Laba5\code\Lab5\Lab5\impl\pnr\device.cfg
+-cst C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba5\code\Lab5\Lab5\src\spi_slave.cst
+-cfg C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba5\code\Lab5\Lab5\impl\pnr\device.cfg
 -bit
 -tr
 -ph

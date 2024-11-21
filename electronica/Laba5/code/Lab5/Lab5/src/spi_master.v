@@ -1,63 +1,132 @@
-module spi_master
-#(
-    parameter LED_COUNT = 6,       // Количество светодиодов
-    parameter COOLDOWN = 23         // Задержка для изменения
-)
+module master_control
 (
-    input clk,                     // Тактовый сигнал
-    input button_data,             // Кнопка данных
-    input button_send,             // Кнопка отправки
-    output [LED_COUNT-1:0] led,     // Светодиоды
-    output reg [LED_COUNT-1:0] data_out, // Данные для отправки на ведомое устройство
-    output reg SCLK,             // Сигнал синхронизации
-    output reg MOSI,             // Данные от ведущего
-    output reg SS               // Выбор ведомого
+	input clk,
+	input increment,
+	input transmit,
+	output [5:0] led,
 
+	output SCLK,
+	output MOSI,
+	input MISO,
+	output SS
 );
 
-reg [LED_COUNT-1:0] counter;      // Счетчик для управления светодиодами
-reg [COOLDOWN-1:0] cooldown;       // Счетчик задержки
-reg [2:0] bit_cnt = 0;             // Счётчик бит (3 бита для 6 тактов)
-reg sending = 0;                   // Флаг передачи
+reg [7:0] data_out;
+wire [7:0] data_in;
 
-initial begin
-    counter <= 6'b000000;           // Начальное состояние светодиодов (включены)
-    cooldown <= 0;                  // Начальное значение для cooldown
-    data_out <= 6'b111111;
-    SS <= 1;
-    SCLK <= 0;
+reg [19:0] start_counter;
+wire start;
+
+reg [19:0] inc_counter;
+
+spi_master m (clk, start, data_out, data_in, SCLK, MOSI, MISO, SS);
+
+always @(posedge clk)
+begin
+	if (!increment)
+	begin
+		if (!inc_counter[19])
+		begin
+			inc_counter = inc_counter + 1;
+			if (inc_counter[19]) 
+				data_out = data_out + 1;
+		end
+	end
+	else
+	begin
+		inc_counter <= 0;
+	end
 end
 
-always @(posedge clk) begin
-    
-    if (cooldown == 0) begin
-        if (!button_data) begin      // Увеличение при нажатии кнопки button_data
-            cooldown <= (2 ** COOLDOWN) - 1;
-            counter <= counter + 1'b1;
-        end
-        else if (!button_send) begin // Сброс при нажатии кнопки down
-                cooldown <= (2 ** COOLDOWN) - 1;
-                data_out <= ~counter;
-                counter <= 0;
-                SS <= 0;
-                bit_cnt <= 0;
-                sending <= 1;
-            end else if (sending) begin
-                        if (bit_cnt < 8) begin
-                            SCLK <= ~SCLK;
-                            MOSI <= data_out[bit_cnt];
-                            bit_cnt <= bit_cnt + 1;  
-                        end else begin
-                            SS <= 1;
-                            sending <= 0;
-                            SCLK <= 0;
-                                 end
-                     end
-    end else begin
-            cooldown <= cooldown - 1'b1; // Отсчитываем задержку
-        end
+always @(posedge clk)
+begin
+	if (!transmit)
+	begin
+		if (!start_counter[19])
+			start_counter <= start_counter + 1;
+	end
+	else
+	begin
+		start_counter <= 0;
+	end
 end
 
-assign led = ~counter;               // Инвертируем значения для светодиодов
+assign led = ~data_out[5:0];
+assign start = start_counter[19];
+
+endmodule
+
+module spi_master
+(
+	input clk,
+	input start,
+	input [7:0] data_out,
+	output reg [7:0] data_in,
+
+	output reg SCLK,
+	output reg MOSI,
+	input MISO,
+	output reg SS
+);
+
+reg [1:0] state;
+reg [2:0] data_counter;
+
+initial
+begin
+	data_in <= 0;
+	state <= 0;
+	SS <= 1;
+	MOSI <= 0;
+	SCLK <= 0;
+	data_counter <= 0;
+end
+
+always @(posedge clk)
+begin
+	case (state)
+		0:
+		begin
+			if (start) // If not transmitting but commanded to start
+			begin
+				state <= 1;
+
+				SS <= 0;
+				SCLK <= 0;
+				data_counter <= 7;
+				MOSI <= data_out[7];
+			end
+		end
+		1: // If transmitting
+		begin
+			if (!SCLK) // If making a posedge
+			begin		
+				data_in[data_counter] <= MISO;
+
+				if (!data_counter)
+					state <= 2;
+				else
+					data_counter <= data_counter - 1'b1;
+			end
+			else
+			begin
+				MOSI <= data_out[data_counter];
+			end
+
+			SCLK <= ~SCLK;
+		end
+		2: // If packets sent
+		begin
+			SCLK <= 0;
+			state <= 3;
+			MOSI <= 0;
+		end
+		3: // If ending transmission
+		begin
+			SS <= 1;
+			state <= 0;
+		end
+	endcase
+end
 
 endmodule
