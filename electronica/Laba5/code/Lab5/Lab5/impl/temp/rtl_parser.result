@@ -1,9 +1,9 @@
 [
  {
-  "InstFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba5/code/Lab5/Lab5/src/spi_slave.v",
+  "InstFile" : "C:/github/Sem3-OOP-Csharp/electronica/Laba5/code/Lab5/Lab5/src/spi_slave.v",
   "InstLine" : 1,
   "InstName" : "spi_slave",
-  "ModuleFile" : "C:/Users/Nef0o0r/OneDrive/Study/2_cours/Sem_1/OOPcs-Electronic/electronica/Laba5/code/Lab5/Lab5/src/spi_slave.v",
+  "ModuleFile" : "C:/github/Sem3-OOP-Csharp/electronica/Laba5/code/Lab5/Lab5/src/spi_slave.v",
   "ModuleLine" : 1,
   "ModuleName" : "spi_slave"
  }
