@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Thu Nov 21 16:51:39 2024
+<td>Fri Nov 22 12:05:01 2024
 </td>
 </tr>
 <tr>
@@ -97,24 +97,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 0.004s, Elapsed time = 0h 0m 0.004s
-   Placement Phase 1: CPU time = 0h 0m 0.064s, Elapsed time = 0h 0m 0.064s
-   Placement Phase 2: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
-   Placement Phase 3: CPU time = 0h 0m 0.523s, Elapsed time = 0h 0m 0.523s
-   Total Placement: CPU time = 0h 0m 0.592s, Elapsed time = 0h 0m 0.592s
+   Placement Phase 0: CPU time = 0h 0m 0.006s, Elapsed time = 0h 0m 0.006s
+   Placement Phase 1: CPU time = 0h 0m 0.11s, Elapsed time = 0h 0m 0.11s
+   Placement Phase 2: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.001s
+   Placement Phase 3: CPU time = 0h 0m 0.899s, Elapsed time = 0h 0m 0.899s
+   Total Placement: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 Running routing:
    Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Routing Phase 1: CPU time = 0h 0m 0.104s, Elapsed time = 0h 0m 0.104s
-   Routing Phase 2: CPU time = 0h 0m 0.068s, Elapsed time = 0h 0m 0.068s
+   Routing Phase 1: CPU time = 0h 0m 0.14s, Elapsed time = 0h 0m 0.14s
+   Routing Phase 2: CPU time = 0h 0m 0.109s, Elapsed time = 0h 0m 0.11s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 0.172s, Elapsed time = 0h 0m 0.172s
+   Total Routing: CPU time = 0h 0m 0.249s, Elapsed time = 0h 0m 0.25s
 Generate output files:
-   CPU time = 0h 0m 0.438s, Elapsed time = 0h 0m 0.438s
+   CPU time = 0h 0m 0.512s, Elapsed time = 0h 0m 0.512s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 261MB</td>
+<td>CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 268MB</td>
 </tr>
 </table>
 <br/>
@@ -400,10 +400,10 @@ Generate output files:
 <tr>
 <td class="label">MISO</td>
 <td></td>
-<td>25/2</td>
+<td>39/2</td>
 <td>Y</td>
 <td>in</td>
-<td>IOB8[A]</td>
+<td>IOB33[A]</td>
 <td>LVCMOS18</td>
 <td>NA</td>
 <td>UP</td>
@@ -526,10 +526,10 @@ Generate output files:
 <tr>
 <td class="label">SCLK</td>
 <td></td>
-<td>27/2</td>
+<td>36/2</td>
 <td>Y</td>
 <td>out</td>
-<td>IOB11[A]</td>
+<td>IOB29[B]</td>
 <td>LVCMOS18</td>
 <td>8</td>
 <td>UP</td>
@@ -544,10 +544,10 @@ Generate output files:
 <tr>
 <td class="label">MOSI</td>
 <td></td>
-<td>26/2</td>
+<td>37/2</td>
 <td>Y</td>
 <td>out</td>
-<td>IOB8[B]</td>
+<td>IOB31[A]</td>
 <td>LVCMOS18</td>
 <td>8</td>
 <td>UP</td>
@@ -562,10 +562,10 @@ Generate output files:
 <tr>
 <td class="label">SS</td>
 <td></td>
-<td>28/2</td>
+<td>38/2</td>
 <td>Y</td>
 <td>out</td>
-<td>IOB11[B]</td>
+<td>IOB31[B]</td>
 <td>LVCMOS18</td>
 <td>8</td>
 <td>UP</td>
@@ -999,7 +999,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">25/2</td>
-<td>MISO</td>
+<td>-</td>
 <td>in</td>
 <td>IOB8[A]</td>
 <td>LVCMOS18</td>
@@ -1015,15 +1015,15 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">26/2</td>
-<td>MOSI</td>
-<td>out</td>
+<td>-</td>
+<td>in</td>
 <td>IOB8[B]</td>
 <td>LVCMOS18</td>
-<td>8</td>
+<td>NA</td>
 <td>UP</td>
+<td>ON</td>
+<td>NONE</td>
 <td>NA</td>
-<td>NA</td>
-<td>OFF</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1031,15 +1031,15 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">27/2</td>
-<td>SCLK</td>
-<td>out</td>
+<td>-</td>
+<td>in</td>
 <td>IOB11[A]</td>
 <td>LVCMOS18</td>
-<td>8</td>
+<td>NA</td>
 <td>UP</td>
+<td>ON</td>
+<td>NONE</td>
 <td>NA</td>
-<td>NA</td>
-<td>OFF</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1047,15 +1047,15 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">28/2</td>
-<td>SS</td>
-<td>out</td>
+<td>-</td>
+<td>in</td>
 <td>IOB11[B]</td>
 <td>LVCMOS18</td>
-<td>8</td>
+<td>NA</td>
 <td>UP</td>
+<td>ON</td>
+<td>NONE</td>
 <td>NA</td>
-<td>NA</td>
-<td>OFF</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1175,15 +1175,15 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">36/2</td>
-<td>-</td>
-<td>in</td>
+<td>SCLK</td>
+<td>out</td>
 <td>IOB29[B]</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1191,15 +1191,15 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">37/2</td>
-<td>-</td>
-<td>in</td>
+<td>MOSI</td>
+<td>out</td>
 <td>IOB31[A]</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1207,15 +1207,15 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">38/2</td>
-<td>-</td>
-<td>in</td>
+<td>SS</td>
+<td>out</td>
 <td>IOB31[B]</td>
 <td>LVCMOS18</td>
-<td>NA</td>
+<td>8</td>
 <td>UP</td>
-<td>ON</td>
-<td>NONE</td>
 <td>NA</td>
+<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1223,7 +1223,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">39/2</td>
-<td>-</td>
+<td>MISO</td>
 <td>in</td>
 <td>IOB33[A]</td>
 <td>LVCMOS18</td>
