@@ -1,8 +1,8 @@
--d D:\GowinProjects\spi_slave_tang\impl\gwsynthesis\spi_slave_tang.vg
+-d C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba5\code\SPI Verilog\spi_slave_tang\impl\gwsynthesis\spi_slave_tang.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst D:\GowinProjects\spi_slave_tang\src\spi_tang.cst
--cfg D:\GowinProjects\spi_slave_tang\impl\pnr\device.cfg
+-cst C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba5\code\SPI Verilog\spi_slave_tang\src\spi_tang.cst
+-cfg C:\Users\Nef0o0r\OneDrive\Study\2_cours\Sem_1\OOPcs-Electronic\electronica\Laba5\code\SPI Verilog\spi_slave_tang\impl\pnr\device.cfg
 -bit
 -tr
 -ph
