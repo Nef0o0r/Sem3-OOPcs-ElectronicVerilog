@@ -1,0 +1,4 @@
+﻿interface FlyBehavior
+{
+    void fly();
+}
