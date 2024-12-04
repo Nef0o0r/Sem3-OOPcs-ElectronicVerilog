@@ -1,4 +1,7 @@
-﻿interface FlyBehavior
+﻿namespace Duck
 {
-    void fly();
+    interface FlyBehavior
+    {
+        void fly();
+    }
 }

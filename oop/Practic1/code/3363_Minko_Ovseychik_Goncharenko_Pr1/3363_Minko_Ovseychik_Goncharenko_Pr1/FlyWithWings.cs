@@ -1,7 +1,10 @@
-﻿class FlyWithWings : FlyBehavior
+﻿namespace Duck
 {
-    public void fly()
+    class FlyWithWings : FlyBehavior
     {
-        System.Console.WriteLine("I can fly");
+        public void fly()
+        {
+            System.Console.WriteLine("I can fly");
+        }
     }
 }

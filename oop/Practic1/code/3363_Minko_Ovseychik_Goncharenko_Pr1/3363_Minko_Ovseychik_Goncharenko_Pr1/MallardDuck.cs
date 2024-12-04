@@ -1,9 +1,14 @@
-﻿class MallardDuck : Duck
+﻿namespace Duck
 {
-    public MallardDuck()
+    class MallardDuck : Duck
     {
-        quackbehavior = new Quack();
-        flybehavior = new FlyWithWings();
-        System.Console.WriteLine("I MallardDuck");
+        public MallardDuck()
+        {
+            quackbehavior = new Quack();
+            flybehavior = new FlyWithWings();
+            swimbehavior = new Row();
+
+            System.Console.WriteLine("I am a mallard duck");
+        }
     }
 }

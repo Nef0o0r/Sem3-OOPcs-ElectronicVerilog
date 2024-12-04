@@ -1,16 +1,23 @@
-﻿class Duck
+﻿namespace Duck
 {
-    protected FlyBehavior flybehavior;
-    protected QuackBehavior quackbehavior;
+    class Duck
+    {
+        protected FlyBehavior flybehavior;
+        protected QuackBehavior quackbehavior;
+        protected SwimBehavior swimbehavior;
 
-    public Duck() { }
-    public void performFly()
-    {
-        flybehavior.fly();
+        public Duck() { }
+        public void performFly()
+        {
+            flybehavior.fly();
+        }
+        public void performQuack()
+        {
+            quackbehavior.quack();
+        }
+        public void swim()
+        {
+            swimbehavior.swim();
+        }
     }
-    public void performQuack()
-    {
-        quackbehavior.quack();
-    }
-    public void swim() { }
 }
